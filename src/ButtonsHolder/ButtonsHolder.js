@@ -1,5 +1,6 @@
 import React from 'react';
 import { Collapse } from 'antd';
+import MemoryInput from '../MemoryInput/MemoryInput';
 const { Panel } = Collapse;
 
 const options = ['music', 'cooking'];
@@ -9,7 +10,7 @@ const ButtonsHolder = ({clickHandler}) => {
     <Collapse>
       {options.map(option => (
         <Panel header={option} key={option}>
-          This is some placeholder text
+          <MemoryInput />
         </Panel>
       ))}
     </Collapse>

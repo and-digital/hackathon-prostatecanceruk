@@ -5,7 +5,7 @@ const MemoryInput = ({memorySubmit}) => {
     <div className="input-container">
       <p>Tell us more about your memory</p>
       <form action="" onSubmit={memorySubmit}>
-        <textarea className="text-area" type="text" rows="8"/>
+        <textarea className="text-area" type="text" rows="4"/>
         <button className="button" type="submit">Submit</button>
       </form>
     </div>

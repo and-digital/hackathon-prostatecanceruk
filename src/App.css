@@ -94,7 +94,9 @@ img {
 }
 
 .cooking-tag {
-  right: 30%;
+  right: -8px;
+  top: 100px;
+  transform: rotate(45deg)
 }
 
 .enterNameContainer {

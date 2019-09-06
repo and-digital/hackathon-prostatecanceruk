@@ -88,6 +88,11 @@ img {
   min-height: 100vh;
 }
 
+.enterNameContainer > div { 
+  max-width: 32em;
+  margin: 0 auto;
+}
+
 .enterNameContainer * ~ * {
   margin-top: 1em;
 }

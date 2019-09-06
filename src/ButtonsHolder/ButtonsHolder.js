@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const ButtonsHolder = ({clickHandler, dataValMusic, dataValCooking}) => {
+const ButtonsHolder = ({clickHandler}) => {
   return (
     <div className="buttons-holder">
       <button className="button" onClick={clickHandler} data-val="music">Music</button>

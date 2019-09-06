@@ -51,7 +51,7 @@ class App extends React.Component {
     });
 
     await new Promise((res) => setTimeout(res, 2000));
-    console.log('yay async');
+    console.log('update API with name');
   }
 
   clickHandler(e) {
@@ -66,6 +66,9 @@ class App extends React.Component {
       return {
         selectedData: updatedArray,
       }
+    }, async () => {
+      await new Promise((res) => setTimeout(res, 2000));
+      console.log('update API with selected values');
     });
   }
 
@@ -80,11 +83,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Heading name={name} />
-        <ButtonsHolder
-          clickHandler={this.clickHandler}
-          dataValMusic={{name: 'music'}}
-          dataValCooking={{name: 'cooking'}}
-        />
+        <ButtonsHolder clickHandler={this.clickHandler} />
         <ManOfMen tags={selectedData} />
         <Donate />
         <SocialLinks />

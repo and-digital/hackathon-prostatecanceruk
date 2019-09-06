@@ -15,3 +15,38 @@
   cursor: pointer;
 }
 
+
+.links {
+  margin-top: 1em;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.links > button {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  border: none;
+  font-size: inherit;
+  cursor: pointer;
+  border-radius: 4px;
+  color: white;
+}
+
+.links > button + button {
+  margin-left: 10px;
+}
+
+.facebook {
+  background: #29487d;
+}
+
+.twitter {
+  background: #1da1f2;
+}
+
+.instagram {
+  background: #405de6;
+}
+
+

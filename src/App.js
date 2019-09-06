@@ -1,7 +1,10 @@
 import React, {useState} from 'react';
-  import Donate from './Donate';
 import ButtonsHolder from './ButtonsHolder/ButtonsHolder';
 import ManOfMen from  './ManOfMen/ManOfMen';
+import Donate from './Donate';
+import Heading from './Heading';
+import SocialLinks from './SocialLinks';
+
 import './App.css';
 
 function App() {
@@ -15,11 +18,11 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <Donate />
-      </header>
+      <Heading name="David" />
+      <Donate />
       <ButtonsHolder clickHandler={clickHandler} />
       <ManOfMen />
+      <SocialLinks />
     </div>
   );
 }

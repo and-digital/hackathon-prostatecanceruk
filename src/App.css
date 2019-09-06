@@ -123,6 +123,10 @@ img {
   min-height: 100vh;
 }
 
+.enterNameContainer h1 {
+  color: white;
+}
+
 .enterNameContainer > div { 
   max-width: 32em;
   margin: 0 auto;

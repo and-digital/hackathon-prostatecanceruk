@@ -3,6 +3,7 @@ import queryString from 'query-string';
 
 import ButtonsHolder from './ButtonsHolder/ButtonsHolder';
 import Donate from './Donate';
+import EnterName from './EnterName';
 import Heading from './Heading';
 import ManOfMen from  './ManOfMen/ManOfMen';
 import SocialLinks from './SocialLinks';
@@ -25,18 +26,31 @@ class App extends React.Component {
     this.state = {
       id: null,
       name: null,
-      selectedData: null,
+      selectedData: [],
+      captureName: true,
     }
     this.clickHandler = this.clickHandler.bind(this);
+    this.captureName = this.captureName.bind(this);
   }
 
   componentDidMount() {
     const id = getID();
+    if (id) {
+      this.setState({
+        id,
+        name: names[id],
+        captureName: !id,
+      })
+    } 
+  }
 
+  captureName(name) {
     this.setState({
-      id,
-      name: names[id],
-    })
+      captureName: !name,
+      name,
+    });
+
+    // do some api stuff where we save name
   }
 
   clickHandler() {
@@ -47,9 +61,15 @@ class App extends React.Component {
   }
 
   render() {
+    const { name, captureName } = this.state;
+
+    if (captureName) {
+      return <EnterName eventHandler={this.captureName} />
+    }
+    
     return (
       <div className="App">
-        <Heading name={this.state.name} />
+        <Heading name={name} />
         <ButtonsHolder clickHandler={this.clickHandler} />
         <ManOfMen />
         <Donate />

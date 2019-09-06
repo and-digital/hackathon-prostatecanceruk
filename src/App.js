@@ -9,6 +9,7 @@ import ManOfMen from  './ManOfMen/ManOfMen';
 import SocialLinks from './SocialLinks';
 
 import './App.css';
+import 'antd/dist/antd.css';
 
 const names = {
   1: 'Pravien',
@@ -55,21 +56,22 @@ class App extends React.Component {
   }
 
   clickHandler(e) {
-    const value = e.target.dataset.val
-    this.setState(state => {
-      let updatedArray;
-      if (state.selectedData.includes(value)) {
-        updatedArray = state.selectedData.filter(item => item !== value);
-      } else {
-        updatedArray = state.selectedData.concat(value);
-      }
-      return {
-        selectedData: updatedArray,
-      }
-    }, async () => {
-      await new Promise((res) => setTimeout(res, 2000));
-      console.log('update API with selected values');
-    });
+    console.log('click', e);
+    // const value = e.target.dataset.val
+    // this.setState(state => {
+    //   let updatedArray;
+    //   if (state.selectedData.includes(value)) {
+    //     updatedArray = state.selectedData.filter(item => item !== value);
+    //   } else {
+    //     updatedArray = state.selectedData.concat(value);
+    //   }
+    //   return {
+    //     selectedData: updatedArray,
+    //   }
+    // }, async () => {
+    //   await new Promise((res) => setTimeout(res, 2000));
+    //   console.log('update API with selected values');
+    // });
   }
 
   render() {

@@ -1,10 +1,9 @@
 .App {
-  text-align: center;
   width: 100%;
   max-width: 32em;
-  margin: 0 auto;
+  margin: 1em auto;
+  padding: 0 1em;
 }
-
 
 .button {
   width: 100%;
@@ -13,5 +12,6 @@
   color: black;
   border: 1px solid black;
   font-size: inherit;
+  cursor: pointer;
 }
 

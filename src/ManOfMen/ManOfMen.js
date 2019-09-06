@@ -14,8 +14,8 @@ const ManOfMen = ({ tags }) => {
       <div className="img-container">
         <img src={img} alt="manOfMen"/>
         {tags.map(tag => {
-          const Component = tagsMapper[tag];
-          return <Component />
+          const Component = tagsMapper[tag.name];
+          return <Component memory={tag.memory} />
         })}
       </div>
     </div>

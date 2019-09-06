@@ -5,12 +5,12 @@ const { Panel } = Collapse;
 
 const options = ['music', 'cooking'];
 
-const ButtonsHolder = ({clickHandler}) => {
+const ButtonsHolder = ({memorySubmit}) => {
   return (
     <Collapse>
       {options.map(option => (
         <Panel header={option} key={option}>
-          <MemoryInput />
+          <MemoryInput memorySubmit={memorySubmit} name={option}/>
         </Panel>
       ))}
     </Collapse>

@@ -18,8 +18,6 @@ export async function displayIcons() {
     const items = response.items.map(item => (client.getAsset(item.fields.icon.sys.id)));
     const data = await Promise.all(items);
     return data.map(i => ({
-        //     console.log(i);
-        // });
         id: i.sys.id,
         name: i.fields.title,
         url: i.fields.file.url

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const MusicTag = () => {
+const MusicTag = ({ memory }) => {
   return (
     <span className="tag music-tag">Music</span>
   );

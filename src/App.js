@@ -31,7 +31,7 @@ class App extends React.Component {
       selectedData: [],
       captureName: true,
     }
-    this.clickHandler = this.clickHandler.bind(this);
+    this.memorySubmit = this.memorySubmit.bind(this);
     this.captureName = this.captureName.bind(this);
   }
 
@@ -56,23 +56,23 @@ class App extends React.Component {
     console.log('update API with name');
   }
 
-  clickHandler(e) {
-    console.log('click', e);
-    // const value = e.target.dataset.val
-    // this.setState(state => {
-    //   let updatedArray;
-    //   if (state.selectedData.includes(value)) {
-    //     updatedArray = state.selectedData.filter(item => item !== value);
-    //   } else {
-    //     updatedArray = state.selectedData.concat(value);
-    //   }
-    //   return {
-    //     selectedData: updatedArray,
-    //   }
-    // }, async () => {
-    //   await new Promise((res) => setTimeout(res, 2000));
-    //   console.log('update API with selected values');
-    // });
+  memorySubmit(value) {
+    this.setState(state => {
+      let updatedArray = [];
+      const isPresent = !!state.selectedData.find(item => item.name === value.name)
+      debugger;
+      if (isPresent) {
+        updatedArray = state.selectedData.filter(item => item.name !== value.name);
+      } else {
+        updatedArray = state.selectedData.concat(value);
+      }
+      return {
+        selectedData: updatedArray,
+      }
+    }, async () => {
+      await new Promise((res) => setTimeout(res, 2000));
+      console.log('update API with selected values');
+    });
   }
 
   render() {
@@ -86,7 +86,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Heading name={name} />
-        <ButtonsHolder clickHandler={this.clickHandler} />
+        <ButtonsHolder memorySubmit={this.memorySubmit} />
         <ManOfMen tags={selectedData} />
         <Donate />
         <SocialLinks />

@@ -31,13 +31,16 @@ async function displayIcons() {
     }));
 }
 
-async function saveMemorial(id, name) {
+async function saveMemorial(name, memory) {
     return managementClient.getSpace(SPACE_ID)
         .then((space) => space.getEnvironment(ENVIRONMENT_ID))
-        .then((environment) => environment.createEntryWithId(MEMORIAL_ENTITY, id, {
+        .then((environment) => environment.createEntry(MEMORIAL_ENTITY, {
             fields: {
                 name: {
                     'en-US': name
+                },
+                memory: {
+                    'en-US': memory
                 }
             }
         }))

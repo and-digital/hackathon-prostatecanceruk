@@ -44,13 +44,14 @@ class App extends React.Component {
     } 
   }
 
-  captureName(name) {
+  async captureName(name) {
     this.setState({
       captureName: !name,
       name,
     });
 
-    // do some api stuff where we save name
+    await new Promise((res) => setTimeout(res, 2000));
+    console.log('yay async');
   }
 
   clickHandler() {

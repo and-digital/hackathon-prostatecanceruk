@@ -6,8 +6,6 @@ import Donate from './Donate';
 import EnterName from './EnterName';
 import Heading from './Heading';
 import ManOfMen from  './ManOfMen/ManOfMen';
-import MusicTag from './MusicTag/MusicTag';
-import CookingTag from './CookingTag/CookingTag';
 import SocialLinks from './SocialLinks';
 
 import './App.css';
@@ -73,7 +71,7 @@ class App extends React.Component {
 
   render() {
 
-    const { name, captureName } = this.state;
+    const { name, captureName, selectedData } = this.state;
 
     if (captureName) {
       return <EnterName eventHandler={this.captureName} />
@@ -87,9 +85,7 @@ class App extends React.Component {
           dataValMusic={{name: 'music'}}
           dataValCooking={{name: 'cooking'}}
         />
-        <ManOfMen />
-        {/* {this.isMusicSelected && (<MusicTag />)}
-        {this.isCookingSelected && (<CookingTag />)} */}
+        <ManOfMen tags={selectedData} />
         <Donate />
         <SocialLinks />
       </div>

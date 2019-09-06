@@ -13,6 +13,7 @@
   border: 1px solid black;
   font-size: inherit;
   cursor: pointer;
+  border-radius: 4px;
 }
 
 .button + .button {
@@ -96,3 +97,28 @@ img {
   right: 30%;
 }
 
+.enterNameContainer {
+  background: black;
+  padding: 1em;
+  color: white;
+  min-height: 100vh;
+}
+
+.enterNameContainer > div { 
+  max-width: 32em;
+  margin: 0 auto;
+}
+
+.enterNameContainer * ~ * {
+  margin-top: 1em;
+}
+
+.input {
+  width: 100%;
+  padding: 0.4em 0.8em;
+  background: white;
+  color: black;
+  border: 1px solid black;
+  font-size: inherit;
+  border-radius: 4px;
+}

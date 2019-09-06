@@ -3,6 +3,7 @@ import queryString from 'query-string';
 
 import ButtonsHolder from './ButtonsHolder/ButtonsHolder';
 import Donate from './Donate';
+import EnterName from './EnterName';
 import Heading from './Heading';
 import ManOfMen from  './ManOfMen/ManOfMen';
 import MusicTag from './MusicTag/MusicTag';
@@ -28,17 +29,31 @@ class App extends React.Component {
       id: null,
       name: null,
       selectedData: [],
+      captureName: true,
     }
     this.clickHandler = this.clickHandler.bind(this);
+    this.captureName = this.captureName.bind(this);
   }
 
   componentDidMount() {
     const id = getID();
+    if (id) {
+      this.setState({
+        id,
+        name: names[id],
+        captureName: !id,
+      })
+    } 
+  }
 
+  async captureName(name) {
     this.setState({
-      id,
-      name: names[id],
-    })
+      captureName: !name,
+      name,
+    });
+
+    await new Promise((res) => setTimeout(res, 2000));
+    console.log('yay async');
   }
 
   clickHandler(e) {
@@ -57,10 +72,16 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('selectedData: ', this.state.selectedData)
+
+    const { name, captureName } = this.state;
+
+    if (captureName) {
+      return <EnterName eventHandler={this.captureName} />
+    }
+    
     return (
       <div className="App">
-        <Heading name={this.state.name} />
+        <Heading name={name} />
         <ButtonsHolder
           clickHandler={this.clickHandler}
           dataValMusic={{name: 'music'}}

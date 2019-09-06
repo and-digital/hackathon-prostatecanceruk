@@ -13,16 +13,15 @@ const client = contentful.createClient({
     accessToken: ACCESS_TOKEN
 });
 
-function displayIcons() {
-    return client.getEntries({ content_type: 'icons', select: 'sys.id,fields.name,fields.icon' })
-        .then((response) => response.items)
-        .then(items => items.map(async i => {
-            const asset = await client.getAsset(i.fields.icon.sys.id);
-
-            return { id: i.sys.id, name: i.fields.name, url: asset.fields.file.url };
-        }))
-        .catch((error) => {
-            console.log(chalk.red('\nError occurred while fetching Content Types:'))
-            console.error(error)
-        });
+export async function displayIcons() {
+    const response = await client.getEntries({ content_type: 'icons', select: 'sys.id,fields.name,fields.icon' });
+    const items = response.items.map(item => (client.getAsset(item.fields.icon.sys.id)));
+    const data = await Promise.all(items);
+    return data.map(i => ({
+        //     console.log(i);
+        // });
+        id: i.sys.id,
+        name: i.fields.title,
+        url: i.fields.file.url
+    }));
 }

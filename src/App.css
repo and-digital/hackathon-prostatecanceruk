@@ -85,7 +85,6 @@ img {
 .tag {
   position: absolute;
   top: 50%;
-  border: 1px solid black;
   padding: 10px;
 }
 
@@ -94,7 +93,9 @@ img {
 }
 
 .cooking-tag {
-  right: 30%;
+  right: -8px;
+  top: 100px;
+  transform: rotate(45deg)
 }
 
 .enterNameContainer {

@@ -49,5 +49,11 @@ async function saveMemorial(name, memory) {
         .catch(console.error)
 }
 
-export { displayIcons, saveMemorial };
+async function getMemorial(entryId) {
+    client.getEntry(entryId)
+        .then((entry) => console.log(entry))
+        .catch(console.error)
+}
+
+export { displayIcons, saveMemorial, getMemorial };
 

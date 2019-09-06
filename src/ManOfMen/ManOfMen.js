@@ -5,7 +5,7 @@ const ManOfMen = () => {
   return (
     <div className="mom-holder">
       <div className="img-container">
-        <img src={img} />
+        <img src={img} alt="manOfMen"/>
       </div>
     </div>
   );

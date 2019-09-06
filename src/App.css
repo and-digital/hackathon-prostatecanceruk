@@ -87,16 +87,25 @@ img {
   padding: 10px;
 }
 
+.tag:hover:after {
+  position: absolute;
+  content: attr(data-memory);
+  background: #ccc;
+  color: black;
+  border: #999;
+  font-size: 1rem;
+}
+
 .music-tag {
   left: -2%;
   transform: rotate(-37deg);
   top: 36%;
 }
 
-.cooking-tag {
-  right: -8px;
-  top: 100px;
-  transform: rotate(45deg)
+.golf-tag {
+  transform: scale(0.2) rotate(-50deg);
+  top: 12px;
+  right: -50px;
 }
 
 .enterNameContainer {

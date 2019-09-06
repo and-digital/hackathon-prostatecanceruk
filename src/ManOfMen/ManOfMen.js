@@ -1,11 +1,10 @@
 import React from 'react';
 import MusicTag from '../MusicTag/MusicTag';
-import CookingTag from '../CookingTag/CookingTag';
+import GolfTag from '../GolfTag/GolfTag';
 import img from '../assets/stick-man.png'
 
 const tagsMapper = {
-  cooking: CookingTag,
-  music: MusicTag
+  golf: GolfTag,
 }
 
 const ManOfMen = ({ tags }) => {
@@ -15,7 +14,7 @@ const ManOfMen = ({ tags }) => {
         <img src={img} alt="manOfMen"/>
         {tags.map(tag => {
           const Component = tagsMapper[tag.name];
-          return <Component memory={tag.memory} />
+          return <Component memory={tag.memory} icon={tag.icon} />
         })}
       </div>
     </div>

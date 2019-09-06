@@ -84,13 +84,13 @@ img {
 
 .tag {
   position: absolute;
-  top: 50%;
-  border: 1px solid black;
   padding: 10px;
 }
 
 .music-tag {
-  left: 30%;
+  left: -2%;
+  transform: rotate(-37deg);
+  top: 36%;
 }
 
 .cooking-tag {

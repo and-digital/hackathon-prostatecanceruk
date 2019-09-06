@@ -7,6 +7,7 @@ import EnterName from './EnterName';
 import Heading from './Heading';
 import ManOfMen from  './ManOfMen/ManOfMen';
 import SocialLinks from './SocialLinks';
+import { displayIcons } from './api';
 
 import './App.css';
 import 'antd/dist/antd.css';
@@ -34,7 +35,7 @@ class App extends React.Component {
     this.captureName = this.captureName.bind(this);
   }
 
-  componentDidMount() {
+  async componentDidMount() {
     const id = getID();
     if (id) {
       this.setState({
@@ -43,6 +44,11 @@ class App extends React.Component {
         captureName: !id,
       })
     } 
+    const icons = await displayIcons();
+    this.setState({
+      icons,
+    });
+    
   }
 
   async captureName(name) {
@@ -59,11 +65,14 @@ class App extends React.Component {
     this.setState(state => {
       let updatedArray = [];
       const isPresent = !!state.selectedData.find(item => item.name === value.name)
-      debugger;
       if (isPresent) {
         updatedArray = state.selectedData.filter(item => item.name !== value.name);
       } else {
-        updatedArray = state.selectedData.concat(value);
+        const { url } = state.icons.find(icon => icon.name.toLowerCase() === value.name.toLowerCase());
+        updatedArray = state.selectedData.concat({
+          ...value,
+          icon: `https:${url}`,
+        });
       }
       return {
         selectedData: updatedArray,

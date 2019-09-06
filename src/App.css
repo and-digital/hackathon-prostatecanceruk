@@ -153,3 +153,7 @@ img {
   width: 100%;
   border: 1px solid black;
 }
+
+.ant-collapse-header {
+  text-transform: capitalize;
+}

@@ -90,10 +90,15 @@ img {
 .tag:hover:after {
   position: absolute;
   content: attr(data-memory);
-  background: #ccc;
+  background: #F8F8F8;
+  border-radius: 4px;
   color: black;
   border: #999;
   font-size: 1rem;
+  min-width: 200px;
+  min-height: 200px;
+  text-align: center;
+  padding: 0.5em;
 }
 
 .music-tag {
@@ -103,9 +108,12 @@ img {
 }
 
 .golf-tag {
-  transform: scale(0.2) rotate(-50deg);
   top: 12px;
   right: -50px;
+}
+
+.golf-tag img {
+  transform: scale(0.2) rotate(-50deg);
 }
 
 .enterNameContainer {

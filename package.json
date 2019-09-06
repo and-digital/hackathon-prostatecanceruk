@@ -5,6 +5,7 @@
   "dependencies": {
     "antd": "^3.23.2",
     "contentful": "^7.9.1",
+    "contentful-management": "^5.10.2",
     "query-string": "^6.8.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",

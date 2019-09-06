@@ -9,6 +9,7 @@ import ManOfMen from  './ManOfMen/ManOfMen';
 import SocialLinks from './SocialLinks';
 
 import './App.css';
+import 'antd/dist/antd.css';
 
 const names = {
   1: 'Pravien',
@@ -51,22 +52,26 @@ class App extends React.Component {
     });
 
     await new Promise((res) => setTimeout(res, 2000));
-    console.log('yay async');
+    console.log('update API with name');
   }
 
   clickHandler(e) {
-    const value = e.target.dataset.val
-    this.setState(state => {
-      let updatedArray;
-      if (state.selectedData.includes(value)) {
-        updatedArray = state.selectedData.filter(item => item !== value);
-      } else {
-        updatedArray = state.selectedData.concat(value);
-      }
-      return {
-        selectedData: updatedArray,
-      }
-    });
+    console.log('click', e);
+    // const value = e.target.dataset.val
+    // this.setState(state => {
+    //   let updatedArray;
+    //   if (state.selectedData.includes(value)) {
+    //     updatedArray = state.selectedData.filter(item => item !== value);
+    //   } else {
+    //     updatedArray = state.selectedData.concat(value);
+    //   }
+    //   return {
+    //     selectedData: updatedArray,
+    //   }
+    // }, async () => {
+    //   await new Promise((res) => setTimeout(res, 2000));
+    //   console.log('update API with selected values');
+    // });
   }
 
   render() {
@@ -80,11 +85,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Heading name={name} />
-        <ButtonsHolder
-          clickHandler={this.clickHandler}
-          dataValMusic={{name: 'music'}}
-          dataValCooking={{name: 'cooking'}}
-        />
+        <ButtonsHolder clickHandler={this.clickHandler} />
         <ManOfMen tags={selectedData} />
         <Donate />
         <SocialLinks />

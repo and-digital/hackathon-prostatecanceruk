@@ -1,12 +1,18 @@
 import React from 'react';
+import { Collapse } from 'antd';
+const { Panel } = Collapse;
 
+const options = ['music', 'cooking'];
 
-const ButtonsHolder = ({clickHandler, dataValMusic, dataValCooking}) => {
+const ButtonsHolder = ({clickHandler}) => {
   return (
-    <div className="buttons-holder">
-      <button className="button" onClick={clickHandler} data-val="music">Music</button>
-      <button className="button" onClick={clickHandler} data-val="cooking">Cooking</button>
-    </div>
+    <Collapse>
+      {options.map(option => (
+        <Panel header={option} key={option}>
+          This is some placeholder text
+        </Panel>
+      ))}
+    </Collapse>
   );
 };
 

@@ -3,7 +3,7 @@ import { Collapse } from 'antd';
 import MemoryInput from '../MemoryInput/MemoryInput';
 const { Panel } = Collapse;
 
-const options = ['golf'];
+const options = ['golf', 'football'];
 
 const ButtonsHolder = ({memorySubmit}) => {
   return (

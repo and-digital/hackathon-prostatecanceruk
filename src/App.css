@@ -101,10 +101,9 @@ img {
   padding: 0.5em;
 }
 
-.music-tag {
-  left: -2%;
-  transform: rotate(-37deg);
-  top: 36%;
+.football-tag {
+  left: -16%;
+  top: 12px;
 }
 
 .golf-tag {
@@ -113,6 +112,10 @@ img {
 }
 
 .golf-tag img {
+  transform: scale(0.2) rotate(-50deg);
+}
+
+.football-tag img {
   transform: scale(0.2) rotate(-50deg);
 }
 

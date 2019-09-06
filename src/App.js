@@ -7,7 +7,6 @@ import EnterName from './EnterName';
 import Heading from './Heading';
 import ManOfMen from  './ManOfMen/ManOfMen';
 import SocialLinks from './SocialLinks';
-import MemoryInput from './MemoryInput/MemoryInput';
 import { displayIcons } from './api';
 
 import './App.css';
@@ -85,6 +84,7 @@ class App extends React.Component {
   }
 
   render() {
+    // console.log(displayIcons)
 
     const { name, captureName, selectedData } = this.state;
 

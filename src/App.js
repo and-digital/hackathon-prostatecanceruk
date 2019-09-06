@@ -7,6 +7,7 @@ import EnterName from './EnterName';
 import Heading from './Heading';
 import ManOfMen from  './ManOfMen/ManOfMen';
 import SocialLinks from './SocialLinks';
+import MemoryInput from './MemoryInput/MemoryInput';
 
 import './App.css';
 

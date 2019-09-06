@@ -1,10 +1,11 @@
 import React from 'react';
-import MusicTag from '../MusicTag/MusicTag';
+import FootballTag from '../FootballTag/FootballTag';
 import GolfTag from '../GolfTag/GolfTag';
 import img from '../assets/stick-man.png'
 
 const tagsMapper = {
   golf: GolfTag,
+  football: FootballTag
 }
 
 const ManOfMen = ({ tags }) => {

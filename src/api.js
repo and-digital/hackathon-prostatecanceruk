@@ -1,5 +1,3 @@
-'use strict'
-
 const contentful = require('contentful')
 const contentfulManagement = require('contentful-management')
 

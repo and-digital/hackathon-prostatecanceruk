@@ -14,7 +14,7 @@ const ManOfMen = ({ tags }) => {
         <img src={img} alt="manOfMen"/>
         {tags.map(tag => {
           const Component = tagsMapper[tag.name];
-          return <Component memory={tag.memory} icon={tag.icon} />
+          return <Component memory={tag.memory} icon={tag.icon} key={tag.name}/>
         })}
       </div>
     </div>

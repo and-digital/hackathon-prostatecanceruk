@@ -82,7 +82,10 @@ img {
 }
 
 .enterNameContainer {
+  background: black;
   padding: 1em;
+  color: white;
+  min-height: 100vh;
 }
 
 .enterNameContainer * ~ * {
